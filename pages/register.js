@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Text, Stack, Button, Box, Input } from "@chakra-ui/react";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Register = () => {
+  const router = useRouter();
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleOnSubmit = async () => {
-    // REGISTER FUNCTION GOES HERE
-
-  };
+    {/* REGISTER USER FUNCTION GOES HERE */}
+  }
 
   return (
     <Box className="auth-container">

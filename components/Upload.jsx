@@ -13,7 +13,7 @@ export default function Upload({ userId }) {
   }
 
   return (
-    <Stack px={{ base: 6, md: "7rem", lg: "15rem" }} py={20}>
+    <Stack px={6} py={20}>
       <Stack
         direction={{ base: "column", lg: "row" }}
         py={10}
