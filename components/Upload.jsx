@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Stack, Box, Button, Image, Input } from "@chakra-ui/react";
 
 export default function Upload({ userId, onClose }) {
+  const [loading, setLoading] = useState(false);
   const [img, setImg] = useState();
 
   function handleOnChange(changeEvent) {
@@ -33,7 +34,12 @@ export default function Upload({ userId, onClose }) {
         <form method="post" onSubmit={handleOnSubmit}>
           <Stack mt={4} height={{ base: "100%", lg: "70%" }}>
             <Input type="file" name="file" onChange={handleOnChange} />
-            <Button colorScheme={"purple"} type="submit" disabled={!img} mt={2}>
+            <Button
+              colorScheme={"purple"}
+              type="submit"
+              disabled={!img || loading}
+              mt={2}
+            >
               Publish
             </Button>
           </Stack>

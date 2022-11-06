@@ -13,7 +13,6 @@ import { useRouter } from "next/router";
 import Upload from "./Upload";
 
 const Navbar = ({ isAuthenticated, userId }) => {
-  const [loading, setLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const router = useRouter();
