@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Text, Stack, Button, Box, Input } from "@chakra-ui/react";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Login = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleOnSubmit = async () => {
     // LOGIN FUNCTION GOES HERE
@@ -29,7 +31,12 @@ const Login = () => {
             placeholder="Enter Password"
             type="password"
           />
-          <Button variant={"solid"} colorScheme="purple" type="submit">
+          <Button
+            disabled={loading}
+            variant={"solid"}
+            colorScheme="purple"
+            type="submit"
+          >
             Login
           </Button>
         </Stack>

@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Upload from "../Upload";
+import Upload from "./Upload";
 
 const Navbar = ({ isAuthenticated }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -31,7 +31,7 @@ const Navbar = ({ isAuthenticated }) => {
     >
       <Link href="/" className="text-2xl">
         <Text fontWeight={"bold"} fontSize={"2xl"}>
-          Threza
+          Image-Hub
         </Text>
       </Link>
 

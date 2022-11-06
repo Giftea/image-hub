@@ -8,10 +8,13 @@ const Register = () => {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleOnSubmit = async () => {
-    {/* REGISTER USER FUNCTION GOES HERE */}
-  }
+    {
+      /* REGISTER USER FUNCTION GOES HERE */
+    }
+  };
 
   return (
     <Box className="auth-container">
@@ -42,7 +45,12 @@ const Register = () => {
             placeholder="Enter Password"
             type="password"
           />
-          <Button variant={"solid"} colorScheme="purple" type="submit">
+          <Button
+            disabled={loading}
+            variant={"solid"}
+            colorScheme="purple"
+            type="submit"
+          >
             Register
           </Button>
         </Stack>
