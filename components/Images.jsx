@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import Masonry from "react-masonry-css"; // Library for image gallery layout
 
-export default function Images ({ allImages }) {
+export default function Images({ allImages }) {
   const [searchQuery, setSearchQuery] = useState(""); // SEARCH QUERY PARAM
   const [images, setImages] = useState(allImages); // ARRAY OF IMAGES
   const breakpointColumnsObj = {
@@ -60,19 +60,34 @@ export default function Images ({ allImages }) {
           mt="2rem"
         >
           {images?.map((image) => (
-            <CustomImage key={image.id} src={image?.img} user={image?.user} />
+            <CustomImage key={image.id} src={image?.img_url} user={image?.user} />
           ))}
         </Flex>
       )}
     </Stack>
   );
-};
+}
 
-const CustomImage = () => {
+const CustomImage = ({ src, user }) => {
   return (
     <Box ml="10px" className="custom-image">
-      {/* CUSTOM IMAGE COMPONENT GOES HERE */}
+      <Image w="100%" mb={"20px"} src={src} alt="" />
+      <div className="custom-image-overlay"></div>
+      <Stack
+        direction={"row"}
+        alignItems="center"
+        className="custom-image-more"
+      >
+        <Avatar name={`${user?.firstname} ${user?.lastname}`} />{" "}
+        <Text
+          color={"#fff"}
+          fontSize="xl"
+          fontWeight={"bold"}
+          textTransform="capitalize"
+        >
+          {user?.firstname} {user?.lastname}{" "}
+        </Text>
+      </Stack>
     </Box>
   );
 };
-
