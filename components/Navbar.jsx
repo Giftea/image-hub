@@ -12,7 +12,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Upload from "./Upload";
 
-const Navbar = ({ isAuthenticated }) => {
+const Navbar = ({ isAuthenticated, userId }) => {
+  const [loading, setLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const router = useRouter();
@@ -54,7 +55,7 @@ const Navbar = ({ isAuthenticated }) => {
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
-          <Upload />
+          <Upload userId={userId} onClose={onClose} />
         </ModalContent>
       </Modal>
     </Stack>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Stack, Box, Button, Image, Input } from "@chakra-ui/react";
 
-export default function Upload({ userId }) {
+export default function Upload({ userId, onClose }) {
   const [img, setImg] = useState();
 
   function handleOnChange(changeEvent) {
